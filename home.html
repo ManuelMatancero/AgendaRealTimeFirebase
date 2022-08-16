@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CRUD/styles/main.css">
+    <script src="https://kit.fontawesome.com/6b4767d6a5.js" crossorigin="anonymous"></script>
+    <title>Agenda</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="#">
+                Agenda de Contactos
+              </a>
+              <button class="button is-danger" id="cerrarSesion">Cerrar Sesion</button>
+            </div>
+          </nav>
+    </header>
+    <main class="main-container">
+        <div class="crud-container">
+            <div class="crud-header">
+                <h1>Contactos</h1>
+                <button class="button is-success" id="openRegisterModal">
+                    <i class="fas fa-plus"></i>
+               <span> Nuevo Contacto</span></button>
+            </div>
+            <div class="field has-addons">
+              <div class="control">
+                <input class="input" type="text" id="buscar" placeholder="Buscar contacto">
+              </div>
+              <div class="control">
+                <a class="button is-info" onclick="listarContactos()">
+                  Search
+                </a>
+              </div>
+            </div>
+            <table class="table" id="contactsTable">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Primer Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                    <th>Opciones</th>
+                  </tr>
+                </thead>
+                <tbody id="bodyContacts">
+                </tbody>
+              </table>
+        </div>
+    </main>
+    <div class="modal" id="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Registrar nuevo contacto</p>
+            <button class="delete" aria-label="close" id="closeRegisterModal"></button>
+          </header>
+          <section class="modal-card-body">
+            <!-- Content ... -->
+                <form id="register-form">
+                    <div class="field">
+                        <label class="label">Nombre:</label>
+                        <div class="control">
+                            <input class="input is-rounded" type="text" name="nombre" placeholder="Ingresa tu nombre">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Apellidos:</label>
+                        <div class="control">
+                            <input class="input is-rounded" type="text" name="apellido" placeholder="Ingresa tus apellidos">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Email:</label>
+                        <div class="control">
+                            <input class="input is-rounded" type="text" name="email" placeholder="Ingresa tu email">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Telefono:</label>
+                        <div class="control">
+                            <input class="input is-rounded" type="text" name="telefono" placeholder="Ingresa tu telefono">
+                        </div>
+                    </div>
+                
+          </section>
+          <footer class="modal-card-foot">
+            <button type="submit" class="button is-success">Guardar</button>
+        </form>
+          </footer>
+        </div>
+      </div>
+      
+<div class="modal" id="modal-update">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Actualizar Contacto</p>
+      <button class="delete" aria-label="close" id="closeUpdateModal"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+          <form id="update-form">
+              <div class="field">
+                  <label class="label">Nombre:</label>
+                  <div class="control">
+                      <input class="input is-rounded" type="text" name="nombre" placeholder="Ingresa tu nombre">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Apellidos:</label>
+                  <div class="control">
+                      <input class="input is-rounded" type="text" name="apellido" placeholder="Ingresa tus apellidos">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Email:</label>
+                  <div class="control">
+                      <input class="input is-rounded" type="text" name="email" placeholder="Ingresa tu email">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Telefono:</label>
+                  <div class="control">
+                      <input class="input is-rounded" type="text" name="telefono" placeholder="Ingresa tu telefono">
+                  </div>
+              </div>
+          
+    </section>
+    <footer class="modal-card-foot">
+      <button type="submit" class="button is-success">Actualizar</button>
+  </form>
+    </footer>
+  </div>
+</div><script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script> 
+      <script src="CRUD/js/app.js"></script>    
+</body>
+</html>

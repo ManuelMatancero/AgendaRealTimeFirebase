@@ -23,7 +23,7 @@ function registrar(){
         firebase.auth().createUserWithEmailAndPassword(email.value, pwd.value)
         .then((userCredential) => {
             alert("Usuario Registrado Exitosamente");
-            window.open("login.html");
+            window.open("index.html");
           // Signed in
           var user = userCredential.user;
           // ...

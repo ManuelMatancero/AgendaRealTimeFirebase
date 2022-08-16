@@ -19,7 +19,7 @@ const firebaseConfig = {
         firebase.auth().signInWithEmailAndPassword(email, pwd)
         .then((userCredential) => {
             var user = userCredential.user;
-            window.open("index.html");
+            window.open("home.html");
         })
         .catch((error)=>{
             var error_code= error.code;
